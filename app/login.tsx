@@ -7,16 +7,20 @@ import { ThemedView } from '@/components/ThemedView';
 
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
-export default function login() {
+export default function Login() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigation = useNavigation();
+
 
     const handleLogin = () => {
         // Add your login logic here
         console.log('Logging in with:', email, password);
         // Navigate to home screen or handle authentication
+        navigation.navigate('homeScreen');
     };
     return (
         <View style={styles.container}>
@@ -39,13 +43,12 @@ export default function login() {
                 onChangeText={setPassword}
                 secureTextEntry
             />
-
-            {/*   <Link style={styles.button} onPress={handleLogin}>
-                <Text style={styles.buttonText}>Log In</Text>
-            </Link> */}
+            <TouchableOpacity style={styles.button} onPress={() => handleLogin()}>
+                <Text style={styles.buttonText}>Login</Text>
+            </TouchableOpacity>
 
             <TouchableOpacity >
-                <Text style={styles.linkText}>Don't have an account? Sign up</Text>
+                <Text style={styles.linkText}>Se Registre</Text>
             </TouchableOpacity>
         </View>
     );

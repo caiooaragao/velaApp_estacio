@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './homeScreen'; // Ensure this component exists and is properly exported
 import ListaBarcos from './listaBarcos'; // Ensure this component exists and is properly exported
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import Login from './login';
 
 
 const Stack = createNativeStackNavigator();
@@ -27,7 +28,7 @@ const MyStack = () => {
 const App = () => {
   return (
 
-    <HomeScreen />
+    <Login />
   );
 };
 
