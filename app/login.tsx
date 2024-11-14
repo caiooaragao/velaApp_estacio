@@ -6,7 +6,7 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Link } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 
 export default function login() {
 
@@ -40,11 +40,11 @@ export default function login() {
                 secureTextEntry
             />
 
-            <Link style={styles.button} onPress={handleLogin}>
+            {/*   <Link style={styles.button} onPress={handleLogin}>
                 <Text style={styles.buttonText}>Log In</Text>
-            </Link>
+            </Link> */}
 
-            <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+            <TouchableOpacity >
                 <Text style={styles.linkText}>Don't have an account? Sign up</Text>
             </TouchableOpacity>
         </View>

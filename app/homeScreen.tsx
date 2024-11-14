@@ -29,7 +29,7 @@ export default function HomeScreen({ }: any) {
     };
     const navigateToListaBarcos = () => {
         console.log("aush")
-        navigation.navigate('ListaBarcos'); // Navigate to the "Barcos disponíveis" page
+        navigation.navigate('listaBarcos'); // Navigate to the "Barcos disponíveis" page
     };
     console.log("aush")
     function onPressLearnMore() { }
