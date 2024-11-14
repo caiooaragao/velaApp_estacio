@@ -1,0 +1,158 @@
+{
+  "listaDeBarcos": [
+    {
+      "nomeDoBarco": "Catalina20",
+      "procuraVoluntarios": 3,
+      "donoDoBarco": "Joao Fernandes",
+      "rating": 4
+    },
+    {
+      "nomeDoBarco": "Sun Odyssey",
+      "procuraVoluntarios": 5,
+      "donoDoBarco": "Ana Souza",
+      "rating": 5
+    },
+    {
+      "nomeDoBarco": "Beneteau First",
+      "procuraVoluntarios": 2,
+      "donoDoBarco": "Carlos Lima",
+      "rating": 3
+    },
+    {
+      "nomeDoBarco": "Hanse 315",
+      "procuraVoluntarios": 4,
+      "donoDoBarco": "Mariana Silva",
+      "rating": 4
+    },
+    {
+      "nomeDoBarco": "Hunter 33",
+      "procuraVoluntarios": 3,
+      "donoDoBarco": "Ricardo Alves",
+      "rating": 5
+    },
+    {
+      "nomeDoBarco": "Bavaria Cruiser 34",
+      "procuraVoluntarios": 4,
+      "donoDoBarco": "Lucia Torres",
+      "rating": 4
+    },
+    {
+      "nomeDoBarco": "Jeanneau 349",
+      "procuraVoluntarios": 2,
+      "donoDoBarco": "Miguel Ferreira",
+      "rating": 3
+    },
+    {
+      "nomeDoBarco": "Elan E4",
+      "procuraVoluntarios": 5,
+      "donoDoBarco": "Paula Mendes",
+      "rating": 5
+    },
+    {
+      "nomeDoBarco": "Grand Soleil 34",
+      "procuraVoluntarios": 3,
+      "donoDoBarco": "Pedro Costa",
+      "rating": 4
+    },
+    {
+      "nomeDoBarco": "Dehler 30",
+      "procuraVoluntarios": 4,
+      "donoDoBarco": "Laura Carvalho",
+      "rating": 5
+    }
+  ],
+  "listaDeDonos": [
+    {
+      "nome": "Joao Fernandes",
+      "idade": 45,
+      "sexo": "masculino",
+      "barco": "Catalina20"
+    },
+    {
+      "nome": "Ana Souza",
+      "idade": 34,
+      "sexo": "feminino",
+      "barco": "Sun Odyssey"
+    },
+    {
+      "nome": "Carlos Lima",
+      "idade": 12,
+      "sexo": "masculino",
+      "barco": "Beneteau First"
+    },
+    {
+      "nome": "Mariana Silva",
+      "idade": 29,
+      "sexo": "feminino",
+      "barco": "Hanse 315"
+    },
+    {
+      "nome": "Ricardo Alves",
+      "idade": 38,
+      "sexo": "masculino",
+      "barco": "Hunter 33"
+    },
+    {
+      "nome": "Lucia Torres",
+      "idade": 41,
+      "sexo": "feminino",
+      "barco": "Bavaria Cruiser 34"
+    },
+    {
+      "nome": "Miguel Ferreira",
+      "idade": 50,
+      "sexo": "masculino",
+      "barco": "Jeanneau 349"
+    },
+    {
+      "nome": "Paula Mendes",
+      "idade": 33,
+      "sexo": "feminino",
+      "barco": "Elan E4"
+    },
+    {
+      "nome": "Pedro Costa",
+      "idade": 37,
+      "sexo": "masculino",
+      "barco": "Grand Soleil 34"
+    },
+    {
+      "nome": "Laura Carvalho",
+      "idade": 25,
+      "sexo": "feminino",
+      "barco": "Dehler 30"
+    }
+  ],
+  "tripulantes": [
+    {
+      "nome": "Maria",
+      "idade": 25,
+      "sexo": "feminino",
+      "rating": 4
+    },
+    {
+      "nome": "Lucas",
+      "idade": 22,
+      "sexo": "masculino",
+      "rating": 3
+    },
+    {
+      "nome": "Isabela",
+      "idade": 30,
+      "sexo": "feminino",
+      "rating": 5
+    },
+    {
+      "nome": "Carlos",
+      "idade": 28,
+      "sexo": "masculino",
+      "rating": 4
+    },
+    {
+      "nome": "Fernanda",
+      "idade": 24,
+      "sexo": "feminino",
+      "rating": 5
+    }
+  ]
+}
