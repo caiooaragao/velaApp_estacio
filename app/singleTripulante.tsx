@@ -1,8 +1,10 @@
-import { View, Text, ScrollView, StyleSheet, Image } from 'react-native'
+import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { RouteProp, useRoute } from '@react-navigation/native';
 import StarRating from 'react-native-star-rating-widget';
+import Communications from 'react-native-communications';
+
 type RootStackParamList = {
     singleTripulante: { id: number }; // Param type for this screen
     // Add other screens and their params here
@@ -53,6 +55,14 @@ const singleTripulante = () => {
 
         }
     }, []);
+    function getNumbersFromString(input: string): string {
+        // Using regular expression to match all digits in the string
+        const result = input.replace(/\D/g, ''); // \D matches any non-digit character
+        return result;
+    }
+    const makePhoneCall = () => {
+        Communications.phonecall(getNumbersFromString(dadosTripulante.telefone), true); // 'true' for direct call, 'false' to show the dialer first
+    };
 
     const [rating, setRating] = useState(3)
     return (
@@ -65,7 +75,7 @@ const singleTripulante = () => {
                 />
                 <View style={{ display: "flex", alignItems: "center" }}>
                     <Text style={styles.title}>{`${dadosTripulante.nome},`}
-                        <Text style={{ fontSize: 20, color: "grey" }}>{` ${dadosTripulante.idade} anos`}</Text>
+                        <Text style={{ fontSize: 20, color: "#90a1ac" }}>{` ${dadosTripulante.idade} anos`}</Text>
                     </Text>
 
                 </View>
@@ -103,11 +113,30 @@ const singleTripulante = () => {
                 <Text style={styles.label}>Experiência Prévia:</Text>
                 <Text style={styles.experience}>{dadosTripulante.experiencaPrevia}</Text>
             </View>
+
+            <TouchableOpacity style={styles.button} onPress={() => console.log("clicked")}>
+                <Text style={styles.buttonText}>Ligar</Text>
+            </TouchableOpacity>
         </ScrollView>
     );
 }
 
 const styles = StyleSheet.create({
+    button: {
+        width: '100%',
+        height: 50,
+        backgroundColor: '#007bff',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 8,
+
+    },
+    buttonText: {
+        color: '#ffffff',
+        fontSize: 16,
+        fontWeight: 'bold',
+        padding: 20
+    },
     container: {
         flex: 1,
         padding: 20,

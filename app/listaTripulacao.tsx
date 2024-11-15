@@ -41,6 +41,7 @@ export default function listaTripulacao() {
                 <ExpandableCardTripulante
                     id={tripulante.id}
                     key={index}
+                    idade={tripulante.idade}
                     nomeTripulante={tripulante.nome}
                     telefone={tripulante.telefone}
                     rating={tripulante.rating}

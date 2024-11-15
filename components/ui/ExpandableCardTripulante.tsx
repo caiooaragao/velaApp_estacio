@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Pressable, Animated, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Pressable, Animated, Image, TouchableOpacity, ScrollView } from 'react-native';
 import StarRating from 'react-native-star-rating-widget';
 import { StackNavigationProp } from '@react-navigation/stack';
 // Adjust the path based on where you store it
@@ -21,6 +21,7 @@ type ExpandableCardTripulanteProps = {
     descricaoTripulante: string
     telefone: string
     experiencaPrevia: string
+    idade: number
 
 }
 
@@ -41,7 +42,7 @@ const ExpandableCardTripulante = (props: ExpandableCardTripulanteProps) => {
             }).start();
         } else {
             Animated.timing(animation, {
-                toValue: 300, // Expanded height
+                toValue: 370, // Expanded height
                 duration: 300,
                 useNativeDriver: false,
             }).start();
@@ -77,6 +78,7 @@ const ExpandableCardTripulante = (props: ExpandableCardTripulanteProps) => {
                             <View>
                                 <Text style={styles.title}>{props.nomeTripulante}</Text>
                                 <Text style={{ color: "grey", paddingLeft: 10, marginBottom: 10 }}>{props.nomeDonoDoTripulante}</Text>
+
                                 <View style={{ display: "flex", alignItems: "center", backgroundColor: "#c9ddea", width: "70%", padding: 2, marginBottom: 8, borderRadius: 10 }}><Text>{props.telefone}</Text></View>
                                 <StarRating
                                     rating={props.rating}
@@ -97,15 +99,17 @@ const ExpandableCardTripulante = (props: ExpandableCardTripulanteProps) => {
                         </View>
 
                         {expanded && (
-                            <View style={styles.expandedContent}>
-                                <Text style={styles.description}>
-                                    {props.descricaoTripulante}
-                                </Text>
-                                <TouchableOpacity style={styles.button} onPress={() => handleParticiparTripulacao(props.id)}>
-                                    <Text style={styles.buttonText}>Recrutar tripulante</Text>
-                                </TouchableOpacity>
+                            <ScrollView >
+                                <View style={styles.expandedContent}>
+                                    <Text style={styles.description}>
+                                        {props.descricaoTripulante}
+                                    </Text>
+                                    <TouchableOpacity style={styles.button} onPress={() => handleParticiparTripulacao(props.id)}>
+                                        <Text style={styles.buttonText}>Recrutar tripulante</Text>
+                                    </TouchableOpacity>
 
-                            </View>
+                                </View>
+                            </ScrollView>
 
                         )}
                     </View>
@@ -161,7 +165,8 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     description: {
-        fontSize: 14,
+
+        fontSize: 17,
         color: '#555',
         flexShrink: 1,
         width: '100%'
