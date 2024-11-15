@@ -37,6 +37,7 @@ export default function listaBarcos() {
             {listaBarcos.map((boat: typelistaBarcos, index) =>
             (
                 <ExpandableCard
+                    id={boat.id}
                     key={index}
                     nomeBarco={boat.nomeDoBarco}
                     nomeDonoDoBarco={boat.donoDoBarco}

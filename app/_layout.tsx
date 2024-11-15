@@ -34,7 +34,9 @@ export default function RootLayout() {
         <Stack.Screen name="index" options={{ title: "HomePage" }} />
         <Stack.Screen name="listaBarcos" options={{ title: "Barcos disponíveis" }} />
         <Stack.Screen name="listaTripulacao" options={{ title: "Tripulantes disponíveis" }} />
-        <Stack.Screen name="singleTripulante" options={{ title: "Contacte o tripulante" }} />
+        <Stack.Screen name="singleTripulante" options={{ title: "Detalhes do tripulante" }} />
+        <Stack.Screen name="singleBarco" options={{ title: "Detalhes do barco" }} />
+        <Stack.Screen name="singleDonoBarco" options={{ title: "Detalhes do capitão" }} />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />

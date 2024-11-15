@@ -6,34 +6,34 @@ import StarRating from 'react-native-star-rating-widget';
 import Communications from 'react-native-communications';
 
 type RootStackParamList = {
-    singleTripulante: { id: number }; // Param type for this screen
+    singleDono: { id: number }; // Param type for this screen
     // Add other screens and their params here
 };
 type Props = {
-    route: RouteProp<RootStackParamList, 'singleTripulante'>;
+    route: RouteProp<RootStackParamList, 'singleDono'>;
 };
 
-const singleTripulante = () => {
+const singleDono = () => {
 
-    const [dadosTripulante, setDadosTripulante] = useState<any>({});
-    const [tripulanteId, setTripulanteId] = useState<number | null>(null)
+    const [dadosDono, setDadosDono] = useState<any>({});
+    const [donoId, setDonoId] = useState<number | null>(null)
     const route = useRoute<any>();
 
     const returnStringBasedOnRating = (rating: number) => {
         if (rating === 1) {
-            return "tripulante em fase de aprendizado"
+            return "Capitão(a) em fase de aprendizado"
         }
         if (rating === 2) {
-            return "tripulante em formação"
+            return "Capitão(a)  em formação"
         }
         if (rating === 3) {
-            return "tripulante aprendendo"
+            return "Capitão(a) com domínio"
         }
         if (rating === 4) {
-            return "tripulante experiente"
+            return "Capitão(a)  experiente"
         }
         if (rating == 5) {
-            return "tripulante muito experiente"
+            return "Capitão(a)  muito experiente"
         }
     }
 
@@ -41,8 +41,8 @@ const singleTripulante = () => {
 
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/tripulantes/${route.params.id}`);
-                setDadosTripulante(response.data);
+                const response = await axios.get(`http://localhost:3000/listaDonos/${route.params.id}`);
+                setDadosDono(response.data);
                 console.log("DADOS TRIPULANTE ESPECIFICO", response.data)
             } catch (err: any) {
                 console.log(err)
@@ -51,7 +51,7 @@ const singleTripulante = () => {
 
         fetchData();
         return () => {
-            setTripulanteId(null)
+            setDonoId(null)
 
         }
     }, []);
@@ -61,7 +61,7 @@ const singleTripulante = () => {
         return result;
     }
     const makePhoneCall = () => {
-        Communications.phonecall(getNumbersFromString(dadosTripulante.telefone), true); // 'true' for direct call, 'false' to show the dialer first
+        Communications.phonecall(getNumbersFromString(dadosDono.telefone), true); // 'true' for direct call, 'false' to show the dialer first
     };
 
     const [rating, setRating] = useState(3)
@@ -74,16 +74,16 @@ const singleTripulante = () => {
                     style={{ width: 180, height: 180, marginBottom: 20 }}
                 />
                 <View style={{ display: "flex", alignItems: "center" }}>
-                    <Text style={styles.title}>{`${dadosTripulante.nome},`}
-                        <Text style={{ fontSize: 20, color: "#90a1ac" }}>{` ${dadosTripulante.idade} anos`}</Text>
+                    <Text style={styles.title}>{`${dadosDono.nome},`}
+                        <Text style={{ fontSize: 20, color: "#90a1ac" }}>{` ${dadosDono.idade} anos`}</Text>
                     </Text>
 
                 </View>
-                <Text style={styles.rating}>{returnStringBasedOnRating(dadosTripulante.rating)}</Text>
+                <Text style={styles.rating}>{returnStringBasedOnRating(dadosDono.rating)}</Text>
 
                 <View style={{ marginTop: 0, marginBottom: 20 }}>
                     <StarRating
-                        rating={dadosTripulante.rating ? dadosTripulante.rating : 4}
+                        rating={dadosDono.rating ? dadosDono.rating : 4}
                         onChange={setRating}
                         starSize={27}
                         color="orange"
@@ -91,27 +91,25 @@ const singleTripulante = () => {
                     />
 
                 </View>
-
-
-
-
+            </View>
+            <View style={styles.section}>
+                <Text style={styles.label}>Sobre o capitão(a):</Text>
+                <Text style={styles.description}>{dadosDono.descricao}</Text>
             </View>
 
-
-
             <View style={styles.section}>
-                <Text style={styles.label}>Descrição:</Text>
-                <Text style={styles.description}>{dadosTripulante.descricao}</Text>
+                <Text style={styles.label}>Sexo:</Text>
+                <Text style={styles.description}>{dadosDono.sexo}</Text>
             </View>
 
             <View style={styles.section}>
                 <Text style={styles.label}>Telefone:</Text>
-                <Text style={styles.phone}>{dadosTripulante.telefone}</Text>
+                <Text style={styles.phone}>{dadosDono.telefone}</Text>
             </View>
 
             <View style={styles.section}>
                 <Text style={styles.label}>Experiência Prévia:</Text>
-                <Text style={styles.experience}>{dadosTripulante.experiencaPrevia}</Text>
+                <Text style={styles.experience}>{` ${dadosDono.numeroDeViagens} participações em regatas`}</Text>
             </View>
 
             <TouchableOpacity style={styles.button} onPress={() => makePhoneCall()}>
@@ -188,4 +186,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default singleTripulante;
+export default singleDono;

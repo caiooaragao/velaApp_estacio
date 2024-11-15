@@ -1,6 +1,18 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Pressable, Animated, Image, TouchableOpacity } from 'react-native';
 import StarRating from 'react-native-star-rating-widget';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+// Adjust the path based on where you store it
+type RootStackParamList = {
+    singleTripulante: { id: number }; // Param type for this screen
+    // Add other screens and their params here
+};
+type Props = {
+    navigate: any;
+    navigation: StackNavigationProp<RootStackParamList, 'singleTripulante'>;
+};
+
 
 
 type expandableCardProps = {
@@ -8,6 +20,7 @@ type expandableCardProps = {
     nomeDonoDoBarco: string,
     rating: number
     descricaoBarco: string
+    id: number
 
 }
 
@@ -15,6 +28,8 @@ type expandableCardProps = {
 const ExpandableCard = (props: expandableCardProps) => {
     const [expanded, setExpanded] = useState(false);
     const [rating, setRating] = useState(4);
+    const navigation = useNavigation<Props>();
+
     // Default rating
     const [animation] = useState(new Animated.Value(120)); // Default height including image height
 
@@ -35,7 +50,8 @@ const ExpandableCard = (props: expandableCardProps) => {
         setExpanded(!expanded);
     };
 
-    const handleParticiparTripulacao = () => {
+    const handleParticiparTripulacao = (id: number) => {
+        navigation.navigate('singleBarco', { id });
 
     }
 
@@ -85,7 +101,7 @@ const ExpandableCard = (props: expandableCardProps) => {
                                 <Text style={styles.description}>
                                     {props.descricaoBarco}
                                 </Text>
-                                <TouchableOpacity style={styles.button} onPress={() => handleParticiparTripulacao()}>
+                                <TouchableOpacity style={styles.button} onPress={() => handleParticiparTripulacao(props.id)}>
                                     <Text style={styles.buttonText}>Participar da tripulação</Text>
                                 </TouchableOpacity>
 

@@ -1,119 +1,140 @@
 import { View, Text, ScrollView, StyleSheet, Image, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import { RouteProp, useRoute } from '@react-navigation/native';
+import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import StarRating from 'react-native-star-rating-widget';
 import Communications from 'react-native-communications';
-
+import { StackNavigationProp } from '@react-navigation/stack';
+// Adjust the path based on where you store it
 type RootStackParamList = {
     singleTripulante: { id: number }; // Param type for this screen
     // Add other screens and their params here
 };
 type Props = {
-    route: RouteProp<RootStackParamList, 'singleTripulante'>;
+    navigate: any;
+    navigation: StackNavigationProp<RootStackParamList, 'singleTripulante'>;
 };
 
-const singleTripulante = () => {
 
-    const [dadosTripulante, setDadosTripulante] = useState<any>({});
-    const [tripulanteId, setTripulanteId] = useState<number | null>(null)
+const singleBarco = () => {
+
+    const [dadosbarco, setDadosbarco] = useState<any>({});
+    const [dadosDonoBarco, setDadosDonoBarco] = useState<any>({});
+    const [barcoId, setbarcoId] = useState<number | null>(null)
     const route = useRoute<any>();
+    const navigation = useNavigation<Props>();
 
-    const returnStringBasedOnRating = (rating: number) => {
-        if (rating === 1) {
-            return "tripulante em fase de aprendizado"
-        }
-        if (rating === 2) {
-            return "tripulante em formação"
-        }
-        if (rating === 3) {
-            return "tripulante aprendendo"
-        }
-        if (rating === 4) {
-            return "tripulante experiente"
-        }
-        if (rating == 5) {
-            return "tripulante muito experiente"
-        }
-    }
+
 
     useEffect(() => {
 
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:3000/tripulantes/${route.params.id}`);
-                setDadosTripulante(response.data);
-                console.log("DADOS TRIPULANTE ESPECIFICO", response.data)
+                const response = await axios.get(`http://localhost:3000/listaDeBarcos/${route.params.id}`);
+                setDadosbarco(response.data);
+
             } catch (err: any) {
                 console.log(err)
             }
         };
 
+        const fetchDataDono = async () => {
+            try {
+                const response = await axios.get(`http://localhost:3000/listaDonos?barcoId=${route.params.id}`);
+                setDadosDonoBarco(response.data);
+                console.log("LOG RESPONSE DONO", response.data)
+
+            } catch (err: any) {
+                console.log(err)
+            }
+        };
+
+        fetchDataDono()
         fetchData();
         return () => {
-            setTripulanteId(null)
+            setbarcoId(null)
 
         }
     }, []);
     function getNumbersFromString(input: string): string {
-        // Using regular expression to match all digits in the string
         const result = input.replace(/\D/g, ''); // \D matches any non-digit character
         return result;
     }
     const makePhoneCall = () => {
-        Communications.phonecall(getNumbersFromString(dadosTripulante.telefone), true); // 'true' for direct call, 'false' to show the dialer first
+        Communications.phonecall(getNumbersFromString(dadosbarco.telefone), true); // 'true' for direct call, 'false' to show the dialer first
     };
+
+    const goToCaptaoPage = (id: string) => {
+        navigation.navigate('singleDonoBarco', { id });
+    }
 
     const [rating, setRating] = useState(3)
     return (
         <ScrollView style={styles.container}>
             <View style={{ display: "flex", flexDirection: "column", width: "100%", alignItems: "center" }}>
-
                 <Image
                     source={require('../assets/images/user.png')} // Replace with your image URL or local asset
                     style={{ width: 180, height: 180, marginBottom: 20 }}
                 />
                 <View style={{ display: "flex", alignItems: "center" }}>
-                    <Text style={styles.title}>{`${dadosTripulante.nome},`}
-                        <Text style={{ fontSize: 20, color: "#90a1ac" }}>{` ${dadosTripulante.idade} anos`}</Text>
+                    <Text style={styles.title}>{`${dadosbarco.nomeDoBarco}`}
                     </Text>
-
                 </View>
-                <Text style={styles.rating}>{returnStringBasedOnRating(dadosTripulante.rating)}</Text>
+                <Text style={styles.rating}>{"Capitão e barco verificados"}</Text>
 
                 <View style={{ marginTop: 0, marginBottom: 20 }}>
                     <StarRating
-                        rating={dadosTripulante.rating ? dadosTripulante.rating : 4}
+                        rating={dadosbarco.rating ? dadosbarco.rating : 4}
                         onChange={setRating}
                         starSize={27}
                         color="orange"
-
                     />
+                </View>
+            </View>
+            <View style={styles.section}>
+                {/* <Text style={styles.label}>Capitão:</Text> */}
+                <View style={{ display: "flex", flexDirection: "column", marginTop: 20, gap: 15 }}>
+                    <Text style={{ fontSize: 17, width: "80%", marginLeft: 6 }}>
+                        {`Capitão ${dadosDonoBarco[0]?.nome}`}
+                    </Text>
+                    <StarRating
+                        rating={dadosDonoBarco[0]?.rating ? dadosDonoBarco[0]?.rating : 0}
+                        onChange={setRating}
+                        starSize={23}
+                        color="black"
+                    />
+
+                </View>
+                <View style={{ marginTop: 30 }}>
+                    <TouchableOpacity style={styles.button} onPress={() => goToCaptaoPage(dadosDonoBarco[0].id)}>
+                        <Text style={styles.buttonText}>Ver perfil do capitão</Text>
+                    </TouchableOpacity>
 
                 </View>
 
 
-
-
             </View>
-
-
 
             <View style={styles.section}>
                 <Text style={styles.label}>Descrição:</Text>
-                <Text style={styles.description}>{dadosTripulante.descricao}</Text>
+                <Text style={styles.description}>{dadosbarco.descricao}</Text>
             </View>
-
+            <View style={styles.section}>
+                <Text style={styles.label}>Procura ajuda na manutenção:</Text>
+                <Text style={styles.experience}>{` ${dadosbarco.procuraAjudaManutencao}`}</Text>
+            </View>
             <View style={styles.section}>
                 <Text style={styles.label}>Telefone:</Text>
-                <Text style={styles.phone}>{dadosTripulante.telefone}</Text>
+                <Text style={styles.phone}>{dadosbarco.telefone}</Text>
             </View>
-
             <View style={styles.section}>
-                <Text style={styles.label}>Experiência Prévia:</Text>
-                <Text style={styles.experience}>{dadosTripulante.experiencaPrevia}</Text>
+                <Text style={styles.label}>Número de regatas corridas:</Text>
+                <Text style={styles.phone}>{dadosbarco.numeroDeViagens}</Text>
             </View>
-
+            <View style={styles.section}>
+                <Text style={styles.label}>Parcerias:</Text>
+                <Text style={styles.experience}>{`está procurando ${dadosbarco.procuraVoluntarios} parceiros!`}</Text>
+            </View>
             <TouchableOpacity style={styles.button} onPress={() => makePhoneCall()}>
                 <Text style={styles.buttonText}>Ligar</Text>
             </TouchableOpacity>
@@ -188,4 +209,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default singleTripulante;
+export default singleBarco;

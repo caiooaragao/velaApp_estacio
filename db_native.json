@@ -7,7 +7,9 @@
       "donoDoBarco": "Joao Fernandes",
       "rating": 4,
       "descricao": "Um veleiro compacto e versátil, ideal para iniciantes e pequenas viagens.",
-      "telefone": "81 99842-1241"
+      "telefone": "81 99842-1241",
+      "numeroDeViagens": 20,
+      "procuraAjudaManutencao": "sim"
     },
     {
       "id": "2",
@@ -16,7 +18,9 @@
       "donoDoBarco": "Ana Souza",
       "rating": 5,
       "descricao": "Um barco de cruzeiro confortável, perfeito para longas jornadas no mar.",
-      "telefone": "81 99999-2233"
+      "telefone": "81 99999-2233",
+      "numeroDeViagens": 35,
+      "procuraAjudaManutencao": "nao"
     },
     {
       "id": "3",
@@ -25,7 +29,9 @@
       "donoDoBarco": "Carlos Lima",
       "rating": 3,
       "descricao": "Um veleiro esportivo, conhecido por sua agilidade e desempenho.",
-      "telefone": "81 98765-4321"
+      "telefone": "81 98765-4321",
+      "numeroDeViagens": 15,
+      "procuraAjudaManutencao": "sim"
     },
     {
       "id": "4",
@@ -34,7 +40,9 @@
       "donoDoBarco": "Mariana Silva",
       "rating": 4,
       "descricao": "Um barco compacto e elegante, ideal para pequenas tripulações.",
-      "telefone": "81 98543-6789"
+      "telefone": "81 98543-6789",
+      "numeroDeViagens": 25,
+      "procuraAjudaManutencao": "nao"
     },
     {
       "id": "5",
@@ -43,7 +51,9 @@
       "donoDoBarco": "Ricardo Alves",
       "rating": 5,
       "descricao": "Veleiro espaçoso e confortável, perfeito para cruzeiros em família.",
-      "telefone": "81 99988-1122"
+      "telefone": "81 99988-1122",
+      "numeroDeViagens": 40,
+      "procuraAjudaManutencao": "sim"
     },
     {
       "id": "6",
@@ -52,7 +62,9 @@
       "donoDoBarco": "Lucia Torres",
       "rating": 4,
       "descricao": "Um veleiro moderno com excelente desempenho e conforto.",
-      "telefone": "81 97654-3210"
+      "telefone": "81 97654-3210",
+      "numeroDeViagens": 18,
+      "procuraAjudaManutencao": "nao"
     },
     {
       "id": "7",
@@ -61,7 +73,9 @@
       "donoDoBarco": "Miguel Ferreira",
       "rating": 3,
       "descricao": "Barco compacto e robusto, ideal para regatas e pequenos cruzeiros.",
-      "telefone": "81 97543-2109"
+      "telefone": "81 97543-2109",
+      "numeroDeViagens": 10,
+      "procuraAjudaManutencao": "sim"
     },
     {
       "id": "8",
@@ -70,7 +84,9 @@
       "donoDoBarco": "Paula Mendes",
       "rating": 5,
       "descricao": "Veleiro de alto desempenho, ideal para velejadores experientes.",
-      "telefone": "81 97432-1098"
+      "telefone": "81 97432-1098",
+      "numeroDeViagens": 45,
+      "procuraAjudaManutencao": "nao"
     },
     {
       "id": "9",
@@ -79,7 +95,9 @@
       "donoDoBarco": "Pedro Costa",
       "rating": 4,
       "descricao": "Um barco italiano elegante, perfeito para cruzeiros sofisticados.",
-      "telefone": "81 96321-0987"
+      "telefone": "81 96321-0987",
+      "numeroDeViagens": 30,
+      "procuraAjudaManutencao": "sim"
     },
     {
       "id": "10",
@@ -88,17 +106,24 @@
       "donoDoBarco": "Laura Carvalho",
       "rating": 5,
       "descricao": "Veleiro inovador com design moderno e excelente manobrabilidade.",
-      "telefone": "81 95123-4567"
+      "telefone": "81 95123-4567",
+      "numeroDeViagens": 22,
+      "procuraAjudaManutencao": "nao"
     }
   ],
-  "listaDeDonos": [
+  "listaDonos": [
     {
       "id": 1,
       "nome": "Joao Fernandes",
       "idade": 45,
       "sexo": "masculino",
       "barco": "Catalina20",
-      "telefone": "81 99842-1241"
+      "telefone": "81 99842-1241",
+      "numeroDeViagens": 20,
+      "procuraAjudaManutencao": "sim",
+      "barcoId": "1",
+      "rating": 5,
+      "descricao": "João Fernandes é um capitão experiente com 45 anos, que pilota o barco Catalina20. Ele tem 20 viagens realizadas e busca ajuda na manutenção."
     },
     {
       "id": 2,
@@ -106,7 +131,12 @@
       "idade": 34,
       "sexo": "feminino",
       "barco": "Sun Odyssey",
-      "telefone": "81 99999-2233"
+      "telefone": "81 99999-2233",
+      "numeroDeViagens": 35,
+      "procuraAjudaManutencao": "nao",
+      "barcoId": "2",
+      "rating": 3,
+      "descricao": "Ana Souza, com 34 anos, é capitã do barco Sun Odyssey. Ela já completou 35 viagens e não necessita de ajuda na manutenção."
     },
     {
       "id": 3,
@@ -114,7 +144,12 @@
       "idade": 12,
       "sexo": "masculino",
       "barco": "Beneteau First",
-      "telefone": "81 98765-4321"
+      "telefone": "81 98765-4321",
+      "numeroDeViagens": 15,
+      "procuraAjudaManutencao": "sim",
+      "barcoId": "3",
+      "rating": 5,
+      "descricao": "Carlos Lima é um jovem capitão de 12 anos que navega no barco Beneteau First. Ele já realizou 15 viagens e busca auxílio para a manutenção."
     },
     {
       "id": 4,
@@ -122,7 +157,12 @@
       "idade": 29,
       "sexo": "feminino",
       "barco": "Hanse 315",
-      "telefone": "81 98543-6789"
+      "telefone": "81 98543-6789",
+      "numeroDeViagens": 25,
+      "procuraAjudaManutencao": "nao",
+      "barcoId": "4",
+      "rating": 4,
+      "descricao": "Mariana Silva, de 29 anos, comanda o barco Hanse 315. Ela já participou de 25 viagens e não precisa de assistência para a manutenção."
     },
     {
       "id": 5,
@@ -130,7 +170,12 @@
       "idade": 38,
       "sexo": "masculino",
       "barco": "Hunter 33",
-      "telefone": "81 99988-1122"
+      "telefone": "81 99988-1122",
+      "numeroDeViagens": 40,
+      "procuraAjudaManutencao": "sim",
+      "barcoId": "5",
+      "rating": 1,
+      "descricao": "Ricardo Alves, com 38 anos, é capitão do Hunter 33. Ele já realizou 40 viagens e procura ajuda para a manutenção do barco."
     },
     {
       "id": 6,
@@ -138,7 +183,12 @@
       "idade": 41,
       "sexo": "feminino",
       "barco": "Bavaria Cruiser 34",
-      "telefone": "81 97654-3210"
+      "telefone": "81 97654-3210",
+      "numeroDeViagens": 18,
+      "procuraAjudaManutencao": "nao",
+      "barcoId": "6",
+      "rating": 3,
+      "descricao": "Lucia Torres, de 41 anos, é capitã do Bavaria Cruiser 34. Ela completou 18 viagens e não necessita de assistência na manutenção."
     },
     {
       "id": 7,
@@ -146,7 +196,12 @@
       "idade": 50,
       "sexo": "masculino",
       "barco": "Jeanneau 349",
-      "telefone": "81 97543-2109"
+      "telefone": "81 97543-2109",
+      "numeroDeViagens": 10,
+      "procuraAjudaManutencao": "sim",
+      "barcoId": "7",
+      "rating": 5,
+      "descricao": "Miguel Ferreira, com 50 anos, é capitão do Jeanneau 349. Ele já participou de 10 viagens e busca apoio para a manutenção."
     },
     {
       "id": 8,
@@ -154,7 +209,12 @@
       "idade": 33,
       "sexo": "feminino",
       "barco": "Elan E4",
-      "telefone": "81 97432-1098"
+      "telefone": "81 97432-1098",
+      "numeroDeViagens": 45,
+      "procuraAjudaManutencao": "nao",
+      "barcoId": "8",
+      "rating": 4,
+      "descricao": "Paula Mendes, de 33 anos, comanda o barco Elan E4. Com 45 viagens realizadas, ela não precisa de assistência para manutenção."
     },
     {
       "id": 9,
@@ -162,7 +222,12 @@
       "idade": 37,
       "sexo": "masculino",
       "barco": "Grand Soleil 34",
-      "telefone": "81 96321-0987"
+      "telefone": "81 96321-0987",
+      "numeroDeViagens": 30,
+      "procuraAjudaManutencao": "sim",
+      "barcoId": "9",
+      "rating": 3,
+      "descricao": "Pedro Costa, com 37 anos, é capitão do Grand Soleil 34. Ele já completou 30 viagens e busca apoio na manutenção."
     },
     {
       "id": 10,
@@ -170,7 +235,12 @@
       "idade": 25,
       "sexo": "feminino",
       "barco": "Dehler 30",
-      "telefone": "81 95123-4567"
+      "telefone": "81 95123-4567",
+      "numeroDeViagens": 22,
+      "procuraAjudaManutencao": "nao",
+      "barcoId": "10",
+      "rating": 5,
+      "descricao": "Laura Carvalho, com 25 anos, pilota o barco Dehler 30. Ela realizou 22 viagens e não necessita de auxílio para a manutenção."
     }
   ],
   "tripulantes": [
