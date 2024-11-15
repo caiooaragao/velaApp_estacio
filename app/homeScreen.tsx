@@ -38,9 +38,10 @@ export default function HomeScreen({ }: any) {
         <View style={styles.container}>
             <View style={styles.headerContainer}>
                 <Text style={styles.title}>Bem vindo ao VelaApp</Text>
-                <Image source={require('../assets/images/sailboat.png')} style={{ width: 100, height: 100, marginTop: 30 }} />
-
-
+                <Image
+                    source={require('../assets/images/sailboat.png')}
+                    style={{ width: 100, height: 100, marginTop: 30 }}
+                />
             </View>
 
             <View style={styles.buttonDiv}>
