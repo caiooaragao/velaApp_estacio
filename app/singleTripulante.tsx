@@ -61,13 +61,17 @@ const singleTripulante = () => {
 
                 <Image
                     source={require('../assets/images/user.png')} // Replace with your image URL or local asset
-                    style={{ width: 200, height: 200 }}
+                    style={{ width: 180, height: 180, marginBottom: 20 }}
                 />
                 <View style={{ display: "flex", alignItems: "center" }}>
-                    <Text style={styles.title}>{dadosTripulante.nome}</Text>
+                    <Text style={styles.title}>{`${dadosTripulante.nome},`}
+                        <Text style={{ fontSize: 20, color: "grey" }}>{` ${dadosTripulante.idade} anos`}</Text>
+                    </Text>
 
                 </View>
-                <View style={{ marginTop: 1, marginBottom: 20 }}>
+                <Text style={styles.rating}>{returnStringBasedOnRating(dadosTripulante.rating)}</Text>
+
+                <View style={{ marginTop: 0, marginBottom: 20 }}>
                     <StarRating
                         rating={dadosTripulante.rating ? dadosTripulante.rating : 4}
                         onChange={setRating}
@@ -80,9 +84,9 @@ const singleTripulante = () => {
 
 
 
+
             </View>
 
-            <Text style={styles.rating}>{returnStringBasedOnRating(dadosTripulante.rating)}</Text>
 
 
             <View style={styles.section}>
@@ -117,9 +121,9 @@ const styles = StyleSheet.create({
     },
     rating: {
         paddingLeft: 6,
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: '500',
-        color: '#555',
+        color: '#90a1ac',
         marginBottom: 20,
     },
     section: {

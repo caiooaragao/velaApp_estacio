@@ -29,13 +29,13 @@ const ExpandableCardTripulante = (props: ExpandableCardTripulanteProps) => {
     const [expanded, setExpanded] = useState(false);
     const [rating, setRating] = useState(4);
     // Default rating
-    const [animation] = useState(new Animated.Value(120)); // Default height including image height
+    const [animation] = useState(new Animated.Value(130)); // Default height including image height
     const navigation = useNavigation<Props>();
 
     const toggleExpand = () => {
         if (expanded) {
             Animated.timing(animation, {
-                toValue: 120, // Collapsed height
+                toValue: 130, // Collapsed height
                 duration: 300,
                 useNativeDriver: false,
             }).start();
