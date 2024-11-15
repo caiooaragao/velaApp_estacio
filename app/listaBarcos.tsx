@@ -1,17 +1,48 @@
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Card from '@/components/ui/Card';
 import ExpandableCard from '@/components/ui/ExpandableCard';
+import axios from 'axios';
 
+
+type typelistaBarcos = {
+
+    id: number,
+    nomeDoBarco: string,
+    procuraVoluntarios: number,
+    donoDoBarco: string,
+    rating: 4,
+    descricao: string
+
+}
 export default function listaBarcos() {
+
+    const [listaBarcos, setListaBarcos] = useState<any[]>([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://localhost:3000/listaDeBarcos');
+                setListaBarcos(response.data);
+                console.log(response.data)
+            } catch (err: any) {
+                console.log(err)
+            }
+        };
+
+        fetchData();
+    }, []);
     return (
         <ScrollView contentContainerStyle={styles.container}>
-            <Card title={'card'} description={'descricao teste'} />
-            <Card title={'card'} description={'descricao teste'} />
-            <Card title={'card'} description={'descricao teste'} />
-            <ExpandableCard />
-            <Card title={'card'} description={'descricao teste'} />
-            <Card title={'card'} description={'descricao teste'} />
+            {listaBarcos.map((boat: typelistaBarcos, index) =>
+            (
+                <ExpandableCard
+                    key={index}
+                    nomeBarco={boat.nomeDoBarco}
+                    nomeDonoDoBarco={boat.donoDoBarco}
+                    rating={boat.rating}
+                    descricaoBarco={boat.descricao} />
+            ))}
         </ScrollView>
     );
 }

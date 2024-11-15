@@ -31,6 +31,10 @@ export default function HomeScreen({ }: any) {
         console.log("aush")
         navigation.navigate('listaBarcos'); // Navigate to the "Barcos disponíveis" page
     };
+    const navigateToListaTripulantes = () => {
+        console.log("aush")
+        navigation.navigate('listaTripulacao'); // Navigate to the "Barcos disponíveis" page
+    };
     console.log("aush")
     function onPressLearnMore() { }
     return (
@@ -45,7 +49,7 @@ export default function HomeScreen({ }: any) {
             </View>
 
             <View style={styles.buttonDiv}>
-                <TouchableOpacity style={styles.button} onPress={() => Alert.alert('Custom button pressed!')}>
+                <TouchableOpacity style={styles.button} onPress={() => navigateToListaTripulantes()}>
                     <Text style={styles.buttonText}>Procurar tripulação</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button} onPress={() => navigateToListaBarcos()}>

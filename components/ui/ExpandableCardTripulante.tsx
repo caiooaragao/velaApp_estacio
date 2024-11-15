@@ -1,22 +1,36 @@
+import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Pressable, Animated, Image, TouchableOpacity } from 'react-native';
 import StarRating from 'react-native-star-rating-widget';
+import { StackNavigationProp } from '@react-navigation/stack';
+// Adjust the path based on where you store it
+type RootStackParamList = {
+    singleTripulante: { id: number }; // Param type for this screen
+    // Add other screens and their params here
+};
+type Props = {
+    navigate: any;
+    navigation: StackNavigationProp<RootStackParamList, 'singleTripulante'>;
+};
 
-
-type expandableCardProps = {
-    nomeBarco: string,
-    nomeDonoDoBarco: string,
+type ExpandableCardTripulanteProps = {
+    id: number
+    nomeTripulante: string,
+    nomeDonoDoTripulante?: string,
     rating: number
-    descricaoBarco: string
+    descricaoTripulante: string
+    telefone: string
+    experiencaPrevia: string
 
 }
 
 
-const ExpandableCard = (props: expandableCardProps) => {
+const ExpandableCardTripulante = (props: ExpandableCardTripulanteProps) => {
     const [expanded, setExpanded] = useState(false);
     const [rating, setRating] = useState(4);
     // Default rating
     const [animation] = useState(new Animated.Value(120)); // Default height including image height
+    const navigation = useNavigation<Props>();
 
     const toggleExpand = () => {
         if (expanded) {
@@ -35,9 +49,10 @@ const ExpandableCard = (props: expandableCardProps) => {
         setExpanded(!expanded);
     };
 
-    const handleParticiparTripulacao = () => {
 
-    }
+    const handleParticiparTripulacao = (id: number) => {
+        navigation.navigate('singleTripulante', { id });
+    };
 
     return (
         <View style={{
@@ -60,8 +75,9 @@ const ExpandableCard = (props: expandableCardProps) => {
                     <View style={styles.content}>
                         <View style={{ display: 'flex', flexDirection: 'row', width: '100%', justifyContent: 'space-between' }}>
                             <View>
-                                <Text style={styles.title}>{props.nomeBarco}</Text>
-                                <Text style={{ color: "grey", paddingLeft: 10, marginBottom: 10 }}>{props.nomeDonoDoBarco}</Text>
+                                <Text style={styles.title}>{props.nomeTripulante}</Text>
+                                <Text style={{ color: "grey", paddingLeft: 10, marginBottom: 10 }}>{props.nomeDonoDoTripulante}</Text>
+                                <View style={{ display: "flex", alignItems: "center", backgroundColor: "#c9ddea", width: "70%", padding: 2, marginBottom: 8, borderRadius: 10 }}><Text>{props.telefone}</Text></View>
                                 <StarRating
                                     rating={props.rating}
                                     onChange={setRating}
@@ -72,7 +88,7 @@ const ExpandableCard = (props: expandableCardProps) => {
 
                             </View>
                             <Image
-                                source={require('../../assets/images/sailboat_blue.png')} // Replace with your image URL or local asset
+                                source={require('../../assets/images/user.png')} // Replace with your image URL or local asset
                                 style={styles.image}
                             />
 
@@ -83,10 +99,10 @@ const ExpandableCard = (props: expandableCardProps) => {
                         {expanded && (
                             <View style={styles.expandedContent}>
                                 <Text style={styles.description}>
-                                    {props.descricaoBarco}
+                                    {props.descricaoTripulante}
                                 </Text>
-                                <TouchableOpacity style={styles.button} onPress={() => handleParticiparTripulacao()}>
-                                    <Text style={styles.buttonText}>Participar da tripulação</Text>
+                                <TouchableOpacity style={styles.button} onPress={() => handleParticiparTripulacao(props.id)}>
+                                    <Text style={styles.buttonText}>Recrutar tripulante</Text>
                                 </TouchableOpacity>
 
                             </View>
@@ -166,4 +182,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default ExpandableCard;
+export default ExpandableCardTripulante;

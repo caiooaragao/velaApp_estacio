@@ -33,6 +33,8 @@ export default function RootLayout() {
         {/* <Stack.Screen name="(tabs)" options={{ headerShown: false }} /> */}
         <Stack.Screen name="index" options={{ title: "HomePage" }} />
         <Stack.Screen name="listaBarcos" options={{ title: "Barcos disponíveis" }} />
+        <Stack.Screen name="listaTripulacao" options={{ title: "Tripulantes disponíveis" }} />
+        <Stack.Screen name="singleTripulante" options={{ title: "Contacte o tripulante" }} />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />

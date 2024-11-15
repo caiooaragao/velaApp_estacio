@@ -1,158 +1,223 @@
 {
   "listaDeBarcos": [
     {
+      "id": "1",
       "nomeDoBarco": "Catalina20",
       "procuraVoluntarios": 3,
       "donoDoBarco": "Joao Fernandes",
-      "rating": 4
+      "rating": 4,
+      "descricao": "Um veleiro compacto e versátil, ideal para iniciantes e pequenas viagens.",
+      "telefone": "81 99842-1241"
     },
     {
+      "id": "2",
       "nomeDoBarco": "Sun Odyssey",
       "procuraVoluntarios": 5,
       "donoDoBarco": "Ana Souza",
-      "rating": 5
+      "rating": 5,
+      "descricao": "Um barco de cruzeiro confortável, perfeito para longas jornadas no mar.",
+      "telefone": "81 99999-2233"
     },
     {
+      "id": "3",
       "nomeDoBarco": "Beneteau First",
       "procuraVoluntarios": 2,
       "donoDoBarco": "Carlos Lima",
-      "rating": 3
+      "rating": 3,
+      "descricao": "Um veleiro esportivo, conhecido por sua agilidade e desempenho.",
+      "telefone": "81 98765-4321"
     },
     {
+      "id": "4",
       "nomeDoBarco": "Hanse 315",
       "procuraVoluntarios": 4,
       "donoDoBarco": "Mariana Silva",
-      "rating": 4
+      "rating": 4,
+      "descricao": "Um barco compacto e elegante, ideal para pequenas tripulações.",
+      "telefone": "81 98543-6789"
     },
     {
+      "id": "5",
       "nomeDoBarco": "Hunter 33",
       "procuraVoluntarios": 3,
       "donoDoBarco": "Ricardo Alves",
-      "rating": 5
+      "rating": 5,
+      "descricao": "Veleiro espaçoso e confortável, perfeito para cruzeiros em família.",
+      "telefone": "81 99988-1122"
     },
     {
+      "id": "6",
       "nomeDoBarco": "Bavaria Cruiser 34",
       "procuraVoluntarios": 4,
       "donoDoBarco": "Lucia Torres",
-      "rating": 4
+      "rating": 4,
+      "descricao": "Um veleiro moderno com excelente desempenho e conforto.",
+      "telefone": "81 97654-3210"
     },
     {
+      "id": "7",
       "nomeDoBarco": "Jeanneau 349",
       "procuraVoluntarios": 2,
       "donoDoBarco": "Miguel Ferreira",
-      "rating": 3
+      "rating": 3,
+      "descricao": "Barco compacto e robusto, ideal para regatas e pequenos cruzeiros.",
+      "telefone": "81 97543-2109"
     },
     {
+      "id": "8",
       "nomeDoBarco": "Elan E4",
       "procuraVoluntarios": 5,
       "donoDoBarco": "Paula Mendes",
-      "rating": 5
+      "rating": 5,
+      "descricao": "Veleiro de alto desempenho, ideal para velejadores experientes.",
+      "telefone": "81 97432-1098"
     },
     {
+      "id": "9",
       "nomeDoBarco": "Grand Soleil 34",
       "procuraVoluntarios": 3,
       "donoDoBarco": "Pedro Costa",
-      "rating": 4
+      "rating": 4,
+      "descricao": "Um barco italiano elegante, perfeito para cruzeiros sofisticados.",
+      "telefone": "81 96321-0987"
     },
     {
+      "id": "10",
       "nomeDoBarco": "Dehler 30",
       "procuraVoluntarios": 4,
       "donoDoBarco": "Laura Carvalho",
-      "rating": 5
+      "rating": 5,
+      "descricao": "Veleiro inovador com design moderno e excelente manobrabilidade.",
+      "telefone": "81 95123-4567"
     }
   ],
   "listaDeDonos": [
     {
+      "id": 1,
       "nome": "Joao Fernandes",
       "idade": 45,
       "sexo": "masculino",
-      "barco": "Catalina20"
+      "barco": "Catalina20",
+      "telefone": "81 99842-1241"
     },
     {
+      "id": 2,
       "nome": "Ana Souza",
       "idade": 34,
       "sexo": "feminino",
-      "barco": "Sun Odyssey"
+      "barco": "Sun Odyssey",
+      "telefone": "81 99999-2233"
     },
     {
+      "id": 3,
       "nome": "Carlos Lima",
       "idade": 12,
       "sexo": "masculino",
-      "barco": "Beneteau First"
+      "barco": "Beneteau First",
+      "telefone": "81 98765-4321"
     },
     {
+      "id": 4,
       "nome": "Mariana Silva",
       "idade": 29,
       "sexo": "feminino",
-      "barco": "Hanse 315"
+      "barco": "Hanse 315",
+      "telefone": "81 98543-6789"
     },
     {
+      "id": 5,
       "nome": "Ricardo Alves",
       "idade": 38,
       "sexo": "masculino",
-      "barco": "Hunter 33"
+      "barco": "Hunter 33",
+      "telefone": "81 99988-1122"
     },
     {
+      "id": 6,
       "nome": "Lucia Torres",
       "idade": 41,
       "sexo": "feminino",
-      "barco": "Bavaria Cruiser 34"
+      "barco": "Bavaria Cruiser 34",
+      "telefone": "81 97654-3210"
     },
     {
+      "id": 7,
       "nome": "Miguel Ferreira",
       "idade": 50,
       "sexo": "masculino",
-      "barco": "Jeanneau 349"
+      "barco": "Jeanneau 349",
+      "telefone": "81 97543-2109"
     },
     {
+      "id": 8,
       "nome": "Paula Mendes",
       "idade": 33,
       "sexo": "feminino",
-      "barco": "Elan E4"
+      "barco": "Elan E4",
+      "telefone": "81 97432-1098"
     },
     {
+      "id": 9,
       "nome": "Pedro Costa",
       "idade": 37,
       "sexo": "masculino",
-      "barco": "Grand Soleil 34"
+      "barco": "Grand Soleil 34",
+      "telefone": "81 96321-0987"
     },
     {
+      "id": 10,
       "nome": "Laura Carvalho",
       "idade": 25,
       "sexo": "feminino",
-      "barco": "Dehler 30"
+      "barco": "Dehler 30",
+      "telefone": "81 95123-4567"
     }
   ],
   "tripulantes": [
     {
+      "id": 1,
       "nome": "Maria",
       "idade": 25,
       "sexo": "feminino",
-      "rating": 4
+      "rating": 4,
+      "descricao": "Sou altamente organizada e possuo excelentes habilidades de comunicação, essenciais para coordenar equipes a bordo. Também tenho grande conhecimento em navegação e manutenção de embarcações, garantindo viagens seguras.",
+      "telefone": "81 92345-6789"
     },
     {
+      "id": 2,
       "nome": "Lucas",
       "idade": 22,
       "sexo": "masculino",
-      "rating": 3
+      "rating": 3,
+      "descricao": "Sou motivado e rápido para aprender, sempre mostrando flexibilidade em situações desafiadoras. Minhas habilidades técnicas incluem noções básicas de manuseio de velas e operação de pequenos barcos.",
+      "telefone": "81 93456-7890"
     },
     {
+      "id": 3,
       "nome": "Isabela",
       "idade": 30,
       "sexo": "feminino",
-      "rating": 5
+      "rating": 5,
+      "descricao": "Tenho liderança exemplar e grande capacidade de resolver problemas. Meus conhecimentos técnicos incluem planejamento de rotas marítimas complexas e reparos avançados em sistemas de bordo.",
+      "telefone": "81 94567-8901"
     },
     {
+      "id": 4,
       "nome": "Carlos",
       "idade": 28,
       "sexo": "masculino",
-      "rating": 4
+      "rating": 4,
+      "descricao": "Sou colaborativo e tenho um excelente senso de observação, o que me torna valioso em equipe. Domino o uso de instrumentos de navegação e segurança em alto-mar.",
+      "telefone": "81 95678-9012"
     },
     {
+      "id": 5,
       "nome": "Fernanda",
       "idade": 24,
       "sexo": "feminino",
-      "rating": 5
+      "rating": 5,
+      "descricao": "Sou proativa e criativa, com habilidades para gerenciar crises. Também tenho experiência prática em pilotagem de barcos e otimização do desempenho das embarcações.",
+      "telefone": "81 96789-0123"
     }
   ]
 }
