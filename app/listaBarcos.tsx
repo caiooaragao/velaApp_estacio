@@ -50,6 +50,7 @@ export default function listaBarcos() {
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         padding: 2, // Optional: Add padding if needed
     },
 });

@@ -87,10 +87,14 @@ const ExpandableCard = (props: expandableCardProps) => {
                                 />
 
                             </View>
-                            <Image
-                                source={require('../../assets/images/sailboat_blue.png')} // Replace with your image URL or local asset
-                                style={styles.image}
-                            />
+                            <View style={{ width: "100%", height: "100%", backgroundColor: "#c5ddf6", borderRadius: 50, display: "flex" }}>
+                                <Image
+                                    source={require('../../assets/images/sailboat_blue.png')} // Replace with your image URL or local asset
+                                    style={styles.image}
+                                />
+
+                            </View>
+
 
 
 
@@ -132,12 +136,14 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     image: {
+        borderRadius: 50,
         marginLeft: 50,
-
+        overflow: "hidden",
         width: 80,
         height: 80,
         borderTopLeftRadius: 8,
         borderTopRightRadius: 8,
+
 
     },
     content: {

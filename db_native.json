@@ -289,5 +289,157 @@
       "descricao": "Sou proativa e criativa, com habilidades para gerenciar crises. Também tenho experiência prática em pilotagem de barcos e otimização do desempenho das embarcações.",
       "telefone": "81 96789-0123"
     }
+  ],
+  "listaRegatas": [
+    {
+      "id": 1,
+      "nome": "Regata da Independência",
+      "local": "Recife, Brasil",
+      "data": "2024-11-25",
+      "descricao": "Uma regata anual celebrando a independência do Brasil com percursos desafiadores ao longo do litoral.",
+      "distancia": "20 km",
+      "tipo": "Competição de Veleiros",
+      "condicoesClimaticas": "Vento moderado, céu limpo"
+    },
+    {
+      "id": 2,
+      "nome": "Regata do Sol Nascente",
+      "local": "Olinda, Brasil",
+      "data": "2024-12-10",
+      "descricao": "Uma regata ao amanhecer destacando a beleza do litoral nordestino.",
+      "distancia": "15 km",
+      "tipo": "Passeio Recreativo",
+      "condicoesClimaticas": "Vento fraco, céu parcialmente nublado"
+    },
+    {
+      "id": 3,
+      "nome": "Regata dos Ventos Fortes",
+      "local": "Fernando de Noronha, Brasil",
+      "data": "2025-01-05",
+      "descricao": "Uma das regatas mais desafiadoras do Brasil, com ventos fortes e correntes marítimas intensas.",
+      "distancia": "50 km",
+      "tipo": "Desafio de Longa Distância",
+      "condicoesClimaticas": "Vento forte, mar agitado"
+    },
+    {
+      "id": 4,
+      "nome": "Regata do Pôr do Sol",
+      "local": "Maceió, Brasil",
+      "data": "2024-11-30",
+      "descricao": "Uma regata que combina competição e paisagens deslumbrantes ao pôr do sol.",
+      "distancia": "12 km",
+      "tipo": "Competição de Catamarãs",
+      "condicoesClimaticas": "Vento leve, céu limpo"
+    },
+    {
+      "id": 5,
+      "nome": "Regata das Águas Claras",
+      "local": "Salvador, Brasil",
+      "data": "2025-02-15",
+      "descricao": "Regata de curta distância ideal para iniciantes e entusiastas do esporte.",
+      "distancia": "8 km",
+      "tipo": "Competição Recreativa",
+      "condicoesClimaticas": "Vento moderado, céu claro"
+    },
+    {
+      "id": 6,
+      "nome": "Regata da Lua Cheia",
+      "local": "Ilhabela, Brasil",
+      "data": "2024-12-20",
+      "descricao": "Regata noturna sob a luz da lua cheia, uma experiência única para os participantes.",
+      "distancia": "10 km",
+      "tipo": "Passeio Noturno",
+      "condicoesClimaticas": "Vento fraco, céu claro"
+    },
+    {
+      "id": 7,
+      "nome": "Regata do Atlântico Sul",
+      "local": "Porto Alegre, Brasil",
+      "data": "2025-03-10",
+      "descricao": "Uma regata de longa distância que explora as águas do Atlântico Sul.",
+      "distancia": "100 km",
+      "tipo": "Competição de Resistência",
+      "condicoesClimaticas": "Vento moderado, céu nublado"
+    },
+    {
+      "id": 8,
+      "nome": "Regata da Primavera",
+      "local": "Florianópolis, Brasil",
+      "data": "2024-09-22",
+      "descricao": "Uma regata comemorativa da chegada da primavera, com um clima agradável.",
+      "distancia": "18 km",
+      "tipo": "Passeio Recreativo",
+      "condicoesClimaticas": "Vento leve, céu parcialmente nublado"
+    },
+    {
+      "id": 9,
+      "nome": "Regata do Mar Azul",
+      "local": "Natal, Brasil",
+      "data": "2024-12-05",
+      "descricao": "Uma regata costeira que explora a beleza do mar azul-turquesa do nordeste.",
+      "distancia": "22 km",
+      "tipo": "Competição de Veleiros",
+      "condicoesClimaticas": "Vento forte, céu limpo"
+    },
+    {
+      "id": 10,
+      "nome": "Regata da Amizade",
+      "local": "Fortaleza, Brasil",
+      "data": "2025-01-20",
+      "descricao": "Uma regata amigável que celebra a união entre clubes náuticos locais.",
+      "distancia": "10 km",
+      "tipo": "Passeio Recreativo",
+      "condicoesClimaticas": "Vento moderado, céu parcialmente nublado"
+    },
+    {
+      "id": 11,
+      "nome": "Regata da Esperança",
+      "local": "Rio de Janeiro, Brasil",
+      "data": "2024-12-15",
+      "descricao": "Uma regata beneficente para arrecadar fundos para projetos sociais.",
+      "distancia": "15 km",
+      "tipo": "Competição de Veleiros",
+      "condicoesClimaticas": "Vento leve, céu claro"
+    },
+    {
+      "id": 12,
+      "nome": "Regata do Descobrimento",
+      "local": "Porto Seguro, Brasil",
+      "data": "2024-11-22",
+      "descricao": "Uma regata histórica que celebra o descobrimento do Brasil.",
+      "distancia": "25 km",
+      "tipo": "Competição Histórica",
+      "condicoesClimaticas": "Vento moderado, céu limpo"
+    },
+    {
+      "id": 13,
+      "nome": "Regata dos Rios",
+      "local": "Belém, Brasil",
+      "data": "2025-03-05",
+      "descricao": "Uma regata fluvial que desafia os competidores nas águas da Amazônia.",
+      "distancia": "30 km",
+      "tipo": "Competição de Resistência",
+      "condicoesClimaticas": "Vento leve, céu nublado"
+    },
+    {
+      "id": 14,
+      "nome": "Regata do Porto Seguro",
+      "local": "Vitória, Brasil",
+      "data": "2025-01-12",
+      "descricao": "Uma regata que combina história, cultura e aventura no Espírito Santo.",
+      "distancia": "20 km",
+      "tipo": "Competição de Veleiros",
+      "condicoesClimaticas": "Vento moderado, céu claro"
+    },
+    {
+      "id": 15,
+      "nome": "Regata da Ilha Tropical",
+      "local": "Angra dos Reis, Brasil",
+      "data": "2025-02-18",
+      "descricao": "Uma regata paradisíaca entre as ilhas tropicais de Angra dos Reis.",
+      "distancia": "12 km",
+      "tipo": "Passeio Recreativo",
+      "condicoesClimaticas": "Vento leve, céu parcialmente nublado"
+    }
   ]
 }

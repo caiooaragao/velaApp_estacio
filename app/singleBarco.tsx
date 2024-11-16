@@ -80,7 +80,7 @@ const singleBarco = () => {
                     <Text style={styles.title}>{`${dadosbarco.nomeDoBarco}`}
                     </Text>
                 </View>
-                <Text style={styles.rating}>{"Capitão e barco verificados"}</Text>
+                <Text style={styles.rating}>{"Capitão(a) e barco verificados"}</Text>
 
                 <View style={{ marginTop: 0, marginBottom: 20 }}>
                     <StarRating
@@ -94,20 +94,27 @@ const singleBarco = () => {
             <View style={styles.section}>
                 {/* <Text style={styles.label}>Capitão:</Text> */}
                 <View style={{ display: "flex", flexDirection: "column", marginTop: 20, gap: 15 }}>
-                    <Text style={{ fontSize: 17, width: "80%", marginLeft: 6 }}>
-                        {`Capitão ${dadosDonoBarco[0]?.nome}`}
+                    <Text style={{ fontSize: 20, fontWeight: "bold", width: "80%", marginLeft: 6 }}>
+                        {`Capitão(a) ${dadosDonoBarco[0]?.nome}`}
                     </Text>
                     <StarRating
                         rating={dadosDonoBarco[0]?.rating ? dadosDonoBarco[0]?.rating : 0}
                         onChange={setRating}
-                        starSize={23}
+                        starSize={27}
                         color="black"
                     />
 
                 </View>
                 <View style={{ marginTop: 30 }}>
-                    <TouchableOpacity style={styles.button} onPress={() => goToCaptaoPage(dadosDonoBarco[0].id)}>
-                        <Text style={styles.buttonText}>Ver perfil do capitão</Text>
+                    <TouchableOpacity style={{
+                        width: '100%',
+                        height: 30,
+                        backgroundColor: '#3396ff',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        borderRadius: 8,
+                    }} onPress={() => goToCaptaoPage(dadosDonoBarco[0].id)}>
+                        <Text style={styles.buttonText}>Ver perfil do capitão(a)</Text>
                     </TouchableOpacity>
 
                 </View>

@@ -31,8 +31,9 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
         {/* <Stack.Screen name="(tabs)" options={{ headerShown: false }} /> */}
-        <Stack.Screen name="index" options={{ title: "HomePage" }} />
+        <Stack.Screen name="index" options={{ title: "Home" }} />
         <Stack.Screen name="listaBarcos" options={{ title: "Barcos disponíveis" }} />
+        <Stack.Screen name="listaRegatas" options={{ title: "Regatas futuras" }} />
         <Stack.Screen name="listaTripulacao" options={{ title: "Tripulantes disponíveis" }} />
         <Stack.Screen name="singleTripulante" options={{ title: "Detalhes do tripulante" }} />
         <Stack.Screen name="singleBarco" options={{ title: "Detalhes do barco" }} />

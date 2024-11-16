@@ -1,4 +1,4 @@
-import { Alert, Button, Image, Platform } from 'react-native';
+import { Alert, Button, Image, ImageBackground, Platform } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
@@ -11,6 +11,7 @@ import { useRouter } from 'expo-router';
 
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 
@@ -31,6 +32,10 @@ export default function HomeScreen({ }: any) {
         console.log("aush")
         navigation.navigate('listaBarcos'); // Navigate to the "Barcos disponíveis" page
     };
+    const navigateToListaRegatas = () => {
+        console.log("aush")
+        navigation.navigate('listaRegatas'); // Navigate to the "Barcos disponíveis" page
+    };
     const navigateToListaTripulantes = () => {
         console.log("aush")
         navigation.navigate('listaTripulacao'); // Navigate to the "Barcos disponíveis" page
@@ -38,25 +43,39 @@ export default function HomeScreen({ }: any) {
     console.log("aush")
     function onPressLearnMore() { }
     return (
+        <ScrollView>
+            <View style={styles.container}>
 
-        <View style={styles.container}>
-            <View style={styles.headerContainer}>
-                <Text style={styles.title}>Bem vindo ao VelaApp</Text>
-                <Image
-                    source={require('../assets/images/sailboat.png')}
-                    style={{ width: 100, height: 100, marginTop: 30 }}
-                />
+                <ImageBackground
+                    source={require('../assets/images/agreement_illu.png')}
+                    style={{ backgroundSize: "contain", width: "100%", height: "100%" }}
+                    imageStyle={{ opacity: 0.2 }}
+                >
+                    <View style={styles.container}>
+                        <View style={styles.headerContainer}>
+                            <Text style={styles.title}>Bem vindo ao VelaApp</Text>
+                        </View>
+                        <View>
+                            <Image
+                                source={require('../assets/images/rudder.gif')}
+                                style={{ width: 260, height: 260, borderRadius: 50, opacity: 0.1, marginBottom: 80 }}
+                            />
+                        </View>
+                        <View style={styles.buttonDiv}>
+                            <TouchableOpacity style={styles.button} onPress={() => navigateToListaTripulantes()}>
+                                <Text style={styles.buttonText}>Procurar tripulação</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.button} onPress={() => navigateToListaBarcos()}>
+                                <Text style={styles.buttonText}>Procurar barcos</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.button} onPress={() => navigateToListaRegatas()}>
+                                <Text style={styles.buttonText}>Procurar regatas</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </ImageBackground>
             </View>
-
-            <View style={styles.buttonDiv}>
-                <TouchableOpacity style={styles.button} onPress={() => navigateToListaTripulantes()}>
-                    <Text style={styles.buttonText}>Procurar tripulação</Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button} onPress={() => navigateToListaBarcos()}>
-                    <Text style={styles.buttonText}>Procurar barcos</Text>
-                </TouchableOpacity>
-            </View>
-        </View>
+        </ScrollView>
 
     );
 }
@@ -81,14 +100,14 @@ const styles = StyleSheet.create({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingHorizontal: 20,
+
         flex: 1
 
     },
     title: {
-        fontSize: 24,
+        fontSize: 30,
         fontWeight: 'bold',
-        marginBottom: 20,
+
         marginTop: 40,
         textAlign: 'center',
     },
