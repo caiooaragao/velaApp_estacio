@@ -4,8 +4,8 @@
       "id": "1",
       "nomeDoBarco": "Catalina20",
       "procuraVoluntarios": 3,
-      "donoDoBarco": "Joao Fernandes",
-      "rating": 4,
+      "donoDoBarco": "Icaro Bonfliglio",
+      "rating": 5,
       "descricao": "Um veleiro compacto e versátil, ideal para iniciantes e pequenas viagens.",
       "telefone": "81 99842-1241",
       "numeroDeViagens": 20,
@@ -114,8 +114,8 @@
   "listaDonos": [
     {
       "id": 1,
-      "nome": "Joao Fernandes",
-      "idade": 45,
+      "nome": "Icaro Bonfiglio",
+      "idade": 35,
       "sexo": "masculino",
       "barco": "Catalina20",
       "telefone": "81 99842-1241",
@@ -123,7 +123,7 @@
       "procuraAjudaManutencao": "sim",
       "barcoId": "1",
       "rating": 5,
-      "descricao": "João Fernandes é um capitão experiente com 45 anos, que pilota o barco Catalina20. Ele tem 20 viagens realizadas e busca ajuda na manutenção."
+      "descricao": "Icaro é um capitão experiente com 45 anos, que pilota o barco Catalina20. Ele tem 20 viagens realizadas e busca ajuda na manutenção."
     },
     {
       "id": 2,
